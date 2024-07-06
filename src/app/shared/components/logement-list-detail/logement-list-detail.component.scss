@@ -1,0 +1,125 @@
+
+
+div.header__detail a {
+  background-image: linear-gradient(to right, #3f6de3, #39dec7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+div.save_housing{
+  div{
+    width:auto;
+    height:auto;
+    padding: 4px;
+    text-align: center;
+    a{
+      text-decoration: underline;
+    }
+    &:hover{
+      border-radius:5px;
+      background-color: rgb(225, 216, 216);
+    }
+  }
+
+}
+div.image_detail{
+  div.left{
+    width: 70%;
+    height: 335px;
+  }
+
+  div.right{
+    height: 335px;
+  }
+}
+/**___________Section Information _____________**/
+
+section.information{
+  div.information__left{
+    width: 59%;
+  }
+  div.logements_user{
+    i{
+      color:red;
+    }
+  }
+  div.information_detail{
+    div{
+      text-align: center;
+    }
+  }
+  div.left_containt{
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    border-radius:10px;
+    div.title_card{
+      font-size: 1.3rem;
+      margin-left: 15px;
+      width: 90%;
+    }
+    button{
+      background-image: linear-gradient(to right, #3f6de3, #39dec7);
+      border-radius:5px;
+      cursor: pointer;
+    }
+  }
+
+}
+hr{
+  height:2px;
+  background-color: #c7c7c7c7;
+}
+/**___________Section About_housing _____________**/
+
+section.about_housing{
+  button{
+    cursor: pointer;
+
+    background: white;
+    color: #000;
+    transition:all 0.5s ease-in-out;
+    transform: translateY(10px);
+    &:hover{
+      background: linear-gradient(to right, #39dec7, #3f6de3);
+      color: #fff;
+      transform: translateY(0);
+    }
+  }
+}
+div.reservation{
+
+  div.left_containt{
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    border-radius:10px;
+    div.title_card{
+      font-size: 1.3rem;
+      margin-left: 15px;
+      width: 90%;
+    }
+    button{
+      background-image: linear-gradient(to right, #3f6de3, #39dec7);
+      border-radius:5px;
+      cursor: pointer;
+    }
+  }
+}
+/**___________Section User _____________**/
+
+section.user{
+  div.card__user{
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+    border-radius:10px;
+    width: auto;
+    min-width: 430px;
+    height: auto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  div.right{
+    height:550px
+  }
+}

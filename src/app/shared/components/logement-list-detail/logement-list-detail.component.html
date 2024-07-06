@@ -1,0 +1,480 @@
+
+
+
+  <div class=" header__detail flex items-center w-full pl-20 h-14  ">
+    <a href="#" class="mr-2 text-3xl font-medium text-gray-900 hover:text-gray-400">AisilyBooking</a>
+  </div>
+  <div class="bg-white px-10">
+    <div class="pt-2">
+      <nav aria-label="Breadcrumb">
+        <ol  class="mx-auto flex max-w-2xl  items-center space-x-2 px-4 sm:px-6  lg:max-w-7xl  lg:px-8">
+          <li>
+            <div class="flex items-center">
+              <a href="#" class="mr-2 text-sm font-medium text-gray-900 hover:text-gray-400">Acceuil</a>
+              <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
+                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+              </svg>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <a href="#" class="mr-2 text-sm font-medium text-gray-900 hover:text-gray-400">Blog</a>
+              <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
+                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+              </svg>
+            </div>
+          </li>
+        </ol>
+      </nav>
+
+      <!---Title housing -->
+      <div class="flex items-center justify-between  w-full pl-8 mt-8">
+        <div>
+          <h1 class="text-3xl font-bold">{{housing.name}}, {{housing.capacite}}, {{housing.ville}}</h1>
+        </div>
+        <div class=" save_housing flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-arrow-up-from-bracket text-sm"></i>
+            <a href="" class="text-sm" > Partager </a>
+          </div>
+          <div class="flex items-center gap-2" >
+            <i class="fa-solid fa-download text-sm"></i>
+            <a href="" class="text-sm"> Enregistrer </a>
+          </div>
+        </div>
+      </div>
+      <!-- Image gallery -->
+
+      <div class=" image_detail h-auto mt-6 w-full sm:px-6 flex gap-2 lg:px-8 sm:flex ">
+        <div class=" left aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block bg-black">
+          <img [src]="housing.cover" [alt]="housing.name" class="h-full w-full object-cover object-center">
+        </div>
+        <div class=" right lg:grid lg:grid-cols-2 lg:gap-y-2 lg:gap-x-2">
+          <div class=" flex aspect-h-2 aspect-w-3 overflow-hidden rounded-lg " *ngFor="let image of housing.image">
+            <img [src]="image"  alt="Model wearing plain black basic tee." class="h-44 w-full object-cover object-center  rounded-lg ">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Section Information -->
+  <section class="information px-16 flex items-center justify-between ">
+    <div class="information__left ">
+      <div class="title mt-3 w-full h-auto mb-6">
+        <h2 class="text-2xl font-bold">{{housing.name}}-{{housing.address}}</h2>
+        <span > {{housing.nombre_chambre}} chambres. Salle de bain partagée</span>
+        <ul class="flex items-center gap-2">
+          <p class="">Types de lit:</p>
+          <li *ngFor="let lit of housing.type_lit" class=" w-auto h-auto p-1 text-center bg-gray-200 rounded-lg">
+            {{lit}}</li>
+        </ul>
+      </div>
+      <div class="publiciter flex items-center w-full h-auto p-6 gap-10 border rounded-lg font-bold mb-14">
+        <div class="flex items-center">
+          <p>coup de coeur voyageurs</p>
+        </div>
+        <div class="w-52"><p>Les logements préferér des voyageurs sur AisilyBooking</p></div>
+        <div class="flex items-center justify-center flex-col  ">
+          <div>
+            <p>{{housing.star}}</p>
+          </div>
+          <div>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+        </div>
+        <div class="flex items-center justify-center flex-col border-l pl-2">
+          <p>196</p>
+          <a href="" class="underline" >commetaires</a>
+        </div>
+      </div>
+      <div class="logements_user flex items-center justify-between mb-10">
+        <h2 class="text-2xl font-bold">Chambre dans appartement. <span class="opacity-75 text-2xl">Chez
+          {{housing.user}}</span>
+        </h2>
+        <div class="relative h-8 w-8 rounded-full">
+          <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+          <i class="fa-brands fa-gratipay absolute right-0 text-red-600" ></i>
+        </div>
+      </div>
+      <div class="information_detail flex items-center gap-3">
+        <div class="flex items-center gap-3 h-auto w-72 py-8 pl-5 border rounded-lg text-center">
+          <i class="fa-solid fa-bed"></i>
+          <p>2 lits double</p>
+        </div>
+        <div class="flex items-center gap-2 h-auto w-72 py-8 pl-5 border rounded-lg">
+          <i class="fa-solid fa-shower"></i>
+          <p> Salle de bain partagée </p>
+        </div>
+        <div class="flex items-center gap-3 h-auto w-72 p-5 border rounded-lg">
+          <i class="fa-solid fa-house-circle-check"></i>
+          <p>Sur place voter Hote et d'autres voyageurs</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 my-8" >
+        <div class="relative h-8 w-8 rounded-full">
+          <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+          <i class="fa-brands fa-gratipay absolute right-0 text-red-600" ></i>
+        </div>
+        <div>
+          <p >Séjournez chez {{housing.user | titlecase}}</p>
+          <span class="opacity-60 text-sm">SuperHote . Hote depuis 4ans</span>
+        </div>
+      </div>
+      <hr class="w-full px-14 text-xl">
+      <div class="my-8">
+        <div class="flex items-center gap-4 mb-5">
+          <i class="fa-solid fa-house-circle-check"></i>
+          <div>
+            <p >Espaces communs partager</p>
+            <span class="opacity-60 text-sm">Vous partagerez certains partie du logements avec d'autres voyageurs</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 mb-5">
+          <i class="fa-solid fa-shower"></i>
+          <div>
+            <p >Salle de bain partagée </p>
+            <span class="opacity-60 text-sm">Vous partagerez la sale de bain avec d'autre personnes</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 mb-5">
+          <i class="fa-regular fa-circle-check"></i>
+          <div>
+            <p >Ideal pour Travailler </p>
+            <span class="opacity-60 text-sm">Une Connexion wifi disponible pour le travail</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 mb-5">
+          <i class="fa-solid fa-people-roof"></i>
+          <div>
+            <p>Espaces communs partager</p>
+            <span class="opacity-60 text-sm">Vous partagerez certains partie du logements avec d'autres voyageurs</span>
+          </div>
+        </div>
+      </div>
+      <hr class="w-full px-14 text-xl">
+      <div class="my-5">
+        <p>Certaines informations ont été traduites.
+          <a href="" class="underline font-bold">Voir le contenu original</a></p>
+      </div>
+    </div>
+    <div class="left ">
+      <div class=" left_containt p-5">
+        <div class=" title_card text-center h-auto mb-8">Indiquez vos Date pour voir commbien payer </div>
+        <div class="border-2 h-auto rounded-lg">
+          <div class="flex items-center justify-center gap-4">
+            <div class="lett_card py-3">
+              <P class="text-sm">ARRIVEE</P>
+              <span class="opacity-50">Ajouter une date</span>
+            </div>
+            <div class="right_card border-l-2 pl-3 py-3 ">
+              <P class="text-sm">DEPART</P>
+              <span class="opacity-50">Ajouter une date</span>
+            </div>
+          </div>
+        </div>
+        <button class="blog w-full h-auto mt-5 py-2 text-white font-bold ">Vérifier la disponibilité</button>
+      </div>
+      <div class="mt-8 lg:flex items-center justify-center gap-2 opacity-70">
+        <i class="fa-solid fa-flag-checkered"></i>
+        <a href="" class="underline"> Signaler cette annonce</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Reservation-->
+  <div class=" reservation bg-white sm:py-5 mb-5">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+        <div class="p-8 sm:p-10 lg:flex-auto">
+          <h3 class="text-2xl font-bold tracking-tight text-gray-900">Lifetime membership</h3>
+          <p class="mt-6 text-base leading-7 text-gray-600">Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis repellendus etur quidem assumenda.</p>
+          <div class="mt-10 flex items-center gap-x-4">
+            <h4 class="flex-none text-sm font-semibold leading-6 text-indigo-600">Les differents frais inclus</h4>
+            <div class="h-px flex-auto bg-gray-100"></div>
+          </div>
+          <ul  class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6">
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              Prix/nuit
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              Frais de menage
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              frais des services de las plateforme
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              Taxes
+            </li>
+          </ul>
+        </div>
+        <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+          <div class=" left_containt p-5">
+            <div class=" title_card text-center h-auto mb-8">
+              <p class="mt-6 flex items-baseline justify-center gap-x-2">
+                <span class="text-5xl font-bold tracking-tight text-gray-900">{{housing.prix | currency}}</span>
+                <span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
+              </p>
+            </div>
+            <div class="border-2 h-auto rounded-lg">
+              <div class=" flex items-center justify-center gap-4 border-b">
+                <div class="lett_card py-3">
+                  <P class="text-sm">ARRIVEE</P>
+                  <span class="opacity-50">Ajouter une date</span>
+                </div>
+                <div class="right_card border-l-2 pl-3 py-3 ">
+                  <P class="text-sm">DEPART</P>
+                  <span class="opacity-50">Ajouter une date</span>
+                </div>
+              </div>
+              <div class=" border-l-2 px-3 py-3 flex items-center justify-between">
+                <div>
+                  <P class="text-sm">Voyageurs</P>
+                  <span class="opacity-50">2 Voyageur</span>
+                </div>
+                <div><i class="fa-solid fa-chevron-down"></i></div>
+              </div>
+            </div>
+            <button class="blog w-full h-auto mt-5 py-2 text-white font-bold ">Réserver</button>
+            <div class="text-sm opacity-65 text-center my-3">Aucun montant ne vous sera débité pour le moment</div>
+            <div class="mt-5">
+              <div class="flex items-center justify-between mb-3"><p class="text-sm opacity-75 underline">80$ x 6
+                nuits</p>
+                <span class="opacity-55">480$</span>
+              </div>
+              <div class="flex items-center justify-between mb-3"><p class="text-sm opacity-75 underline">Frais de
+                menage</p>
+                <span class="opacity-55">10$</span>
+              </div>
+              <div class="flex items-center justify-between mb-3"><p class="text-sm opacity-75 underline">frais des
+                services de las plateforme</p>
+                <span class="opacity-55">95$</span>
+              </div>
+              <div class="flex items-center justify-between mb-3"><p class="text-sm opacity-75 underline">Taxes</p>
+                <span class="opacity-55">45$</span>
+              </div>
+            </div>
+            <div class="h-px flex-auto bg-gray-400 mb-3"></div>
+            <div class="flex items-center justify-between mb-3 h-auto w-full"> <span>Total </span>
+              <span>630$</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-px bg-gray-400 "></div>
+
+  <!--Section About_housing-->
+
+  <section class="about_housing px-14 flex items-center justify-center gap-10 mb-20 mt-5">
+    <div class="h-auto">
+      <h3 class="text-xl font-bold mb-3" >A Propos de ce logement</h3>
+      <p>Chambre Double Logement situe à {{housing.ville}} à 15 minutes de l'aéroprt </p>
+      <p>Un supermarché à 3mn  de meme que un centre medical à 10mn </p>
+      <p>une superficie de {{housing.nombre_pices}} </p>
+      <p class="mb-5">contact {{housing.telephone}}</p>
+      <a href="" class=" blog underline font-bold mt-8 " > En savoir plus &rAarr;</a>
+    </div>
+      <div>
+        <div class="w-full text-center">
+          <h3 class="text-xl font-bold mb-3" >Ce que propos ce logement</h3>
+        </div>
+      <div class="flex items-center gap-8">
+        <div class="left">
+          <div class="flex items-center gap-4 mb-5">
+            <i class="fa-solid fa-pen-nib"></i>
+            <div class="w-52">
+              Serure ou verrou sur toutes les  portes
+            </div>
+          </div>
+          <div class="flex items-center gap-4 mb-5">
+            <i class="fa-solid fa-utensils"></i>
+            <div>
+              Cuisine
+            </div>
+          </div>
+          <div class="flex items-center gap-4 mb-5">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              Espace de travail
+            </div>
+          </div>
+          <div class="flex items-center gap-4 mb-5">
+            <i class="fa-solid fa-tv"></i>
+            <div>
+              Télévision
+            </div>
+          </div>
+          <div class="flex items-center gap-4 mb-5">
+            <i class="fa-solid fa-smoking"></i>
+            <div class="line-through">
+              Detecteur de fumée
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="flex items-center gap-4 mb-5">
+            <i class="fa-solid fa-cloud-showers-water"></i>
+            <div>
+              Accès communes a la picine
+            </div>
+          </div>
+          <div class="flex items-center gap-4 mb-5">
+            <i class="fa-solid fa-wifi"></i>
+            <div>
+              Wifi rapide (220mbi/s)
+            </div>
+          </div>
+          <div class="flex items-center gap-4 mb-5">
+            <i class="fa-solid fa-truck-pickup"></i>
+            <div>
+              Parking gratuit et securiser
+            </div>
+          </div>
+          <div class="flex items-center gap-4 mb-5">
+            <i class="fa-brands fa-squarespace"></i>
+            <div>
+              Ascenseur
+            </div>
+          </div>
+          <div>
+            <ul class="flex items-center gap-3 ">
+              Equipements :
+              <li *ngFor="let equipement of housing.equipement"
+                  class=" w-auto h-auto py-1 px-2 text-center bg-gray-200 rounded-lg">{{equipement}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <button class="h-auto w-auto p-3 border rounded-lg">Affiches les 15 autres Equipements</button>
+    </div>
+  </section>
+
+<!-- Section A savoir -->
+  <div class="h-px bg-gray-400 px-14"></div>
+  <section class="complement_information px-14 my-14">
+    <div class="text-2xl mb-5 px-10 font-bold ">A savoir</div>
+    <div class="flex justify-between items-center">
+      <div class=" flex justify-center items-center flex-col">
+        <p class="font-bold">Règlement intérieur</p>
+        <span class="text-sm"> Ne pas arrivée avant 13h</span>
+        <span class="text-sm"> 4 Voyageurs au maximum</span>
+        <a href="" class=" blog underline font-bold mt-5 " > En savoir plus &rAarr;</a>
+      </div>
+      <div class=" flex justify-center items-center flex-col">
+        <p class="font-bold">Sécuité des logements </p>
+        <span class="text-sm"> Acun détecteur de monoxyde de carbon</span>
+        <span class="text-sm"> 2 Détecteur de fumée</span>
+        <a href="" class=" blog underline font-bold mt-5 " > En savoir plus &rAarr;</a>
+      </div>
+      <div class=" flex justify-center items-center flex-col w-80">
+        <p class="font-bold">Condition D'annulation de reservation</p>
+        <span class="text-sm"> Ajoutez vos dates de voyageges pour connaitre les conditions d'annulation de ses jours</span>
+        <a href="" class=" blog underline font-bold mt-5 " > En savoir plus &rAarr;</a>
+      </div>
+    </div>
+  </section>
+
+<!-- Section User-->
+
+<section class="user px-20">
+  <div class=" text-2xl font-bold h-auto py-8">Faites connaissance avec votre hote</div>
+  <div class="flex justify-center items-center gap-8">
+    <div class="left" >
+      <div class="card__user ">
+        <div class="flex justify-center items-center flex-col gap-5">
+          <div class="relative h-40 w-40 rounded-full">
+            <img class="h-40 w-40 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            <i class="fa-brands fa-gratipay absolute right-0 text-red-600" ></i>
+          </div>
+          <div class="flex justify-center items-center flex-col">
+            <p class="text-xl">{{housing.user}}</p>
+            <div class="flex justify-center items-center gap-3">
+              <i class="fa-brands fa-algolia"></i>
+              <p>SuperHote</p>
+            </div>
+          </div>
+        </div>
+        <div >
+          <div class="border-b py-5">
+            <p>410</p>
+            <p class="text-sm">Evaluation</p>
+          </div>
+          <div class="border-b py-5">
+            <p >5.65</p>
+            <p class="text-sm">note globale</p>
+          </div>
+          <div class="pt-3">
+            <p>3</p>
+            <p class="text-sm">Nombres d'années d'expériences</p>
+          </div>
+        </div>
+      </div>
+      <div class="h-auto w-full py-5">
+        <div class="flex  items-center gap-3 h-auto w-full py-2 ">
+          <i class="fa-solid fa-briefcase"></i>
+          <p>Ma profession: Maintenancier Informatique</p>
+        </div>
+        <div class="flex items-center gap-3 h-auto w-full py-2 ">
+          <i class="fa-solid fa-tag"></i>
+          <p>Je vis à : {{housing.ville}}</p>
+        </div>
+        <div class="flex  items-center gap-3 h-auto w-full py-2 ">
+          Je suis un livre ouvert donc Bienvenue chez moi.
+        </div>
+        <div class="flex  items-center gap-3 h-auto w-full py-2 "><a href="" class=" blog underline font-bold " > En savoir plus &rAarr;</a></div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="h-auo py-3 font-bold text-xl  "> {{housing.user}} est un superHote</div>
+      <div class="h-auo py-3 text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi error esse est
+        eveniet
+        ex id laborum
+        molestiae molestias! Cum, qui!</div>
+      <div class="h-auo py-3">
+        <h4 class="py-3 font-bold text-xl">Information sur l'hote</h4>
+        <p class="text-lg">Taux de réponse:85%</p>
+        <p class="text-lg">reponse dans les temps</p>
+      </div>
+      <button class="h-auto w-auto p-2 border rounded-lg bg-gray-500 cursor-pointer my-3">Envoyer un Message
+        l'hote </button>
+      <div class="h-auo py-3">
+        <p class="text-lg underline pb-1">Numero Particulier</p>
+        <p class="text-lg">Numero : {{housing.telephone}}</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

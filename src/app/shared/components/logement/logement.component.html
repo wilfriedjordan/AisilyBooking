@@ -1,0 +1,5 @@
+
+
+<div class=" grid grid-cols-3  gap-16 px-32 ">
+  <app-logement-list *ngFor="let housing of housings$ | async " [logement]="housing" ></app-logement-list>
+</div>

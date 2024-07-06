@@ -1,0 +1,9 @@
+li.list__footer {
+  list-style: circle;
+  color: aqua;
+  font-size: 1rem;
+}
+
+a.list__item__link__instagram:hover {
+  @apply bg-gradient-to-r from-blue-600 to-pink-600;
+}/*# sourceMappingURL=footer.component.css.map */

@@ -1,0 +1,5 @@
+div.header__detail a {
+  background-image: linear-gradient(to right, #3f6de3, #39dec7);
+  -webkit-background-clip: text;
+  color: transparent;
+}/*# sourceMappingURL=logement-list-detail.component.css.map */

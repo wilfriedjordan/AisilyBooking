@@ -1,0 +1,16 @@
+
+<div class=" card w-80 h-82 ">
+  <div class=" w-full h-52 relative">
+    <a [routerLink]="['housing',logement.id]" ><img [src]="logement.cover" [alt]="logement.name" class=" w-full h-full"></a>
+    <button class="like absolute top-3 right-4 "><i class="fa-regular fa-heart text-3xl "></i></button>
+  </div>
+  <div class=" pt-2 px-2">
+    <div class="flex justify-between">
+      <h2 class=" font-bold">{{logement.address}}</h2>
+      <p >{{logement.star}} <i class="fa-regular fa-star"></i></p>
+    </div>
+    <p class=" opacity-70">Sejournez chez: {{logement.user}}</p>
+    <p class="opacity-50 "><span>{{logement.prix | currency:'EUR'}}</span> /par nuit</p>
+    <p class=" opacity-70">Trouver votre logement à: {{logement.ville}}</p>
+  </div>
+</div>
